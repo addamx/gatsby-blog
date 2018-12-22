@@ -1,0 +1,34 @@
+@import "../../../styles/variables.scss";
+
+.menu {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.item {
+    font-size: 16px;
+
+    &-link {
+        display: block;
+        padding: 10px 20px 10px 40px;;
+        transition: all .2s;
+        position: relative;
+
+        &:hover {
+            background: $color-gray01;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            width: 17px;
+            height: 15.5px;
+            transform: translateY(-50%);
+            background-size: cover;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1152 1024' version='1.1' p-id='2288' width='36' height='32'%3E%3Cpath d='M624.576 0 544.128 80.512 976.192 512.032 544.128 943.488 624.576 1024 1136.096 512.032Z' fill='%23222'/%3E%3C/svg%3E");
+        }
+    }
+}

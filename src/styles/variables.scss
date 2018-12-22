@@ -1,0 +1,17 @@
+//
+// Color
+//--------------------------------------------------
+$color-white: #fff;
+$color-black: #000;
+$color-black01: #222;
+$color-black02: #373a47;
+$color-gray01: #f5f7f9;
+$color-gray02: #555;
+
+//
+// Layout
+//--------------------------------------------------
+$layout__max-width: 1180px;
+$layout__aside-width: 250px;
+$layout__gutter: 15px;
+$breakpoint: $layout__max-width - $layout__aside-width;

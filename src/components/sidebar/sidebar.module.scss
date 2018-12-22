@@ -1,0 +1,25 @@
+@import "../../styles/variables.scss";
+
+
+:global {
+  .link {
+    color: green;
+  }
+}
+
+.avatar {
+    background: $color-black02;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.title {
+    margin: 0 0 21px;
+    color: $color-white;
+}
+
+.description {
+    color: $color-white;
+    margin: 0;
+}
+

@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+.burger {
+    &-menu {
+        position: fixed;
+        width: 25px;
+        height: 20px;
+        top: $layout__gutter;
+        right: $layout__gutter;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    &-bars {
+        position: absolute;
+        height: 20%;
+        top: 0;
+        right: 0;
+        left: 0;
+        background: $color-black02;
+
+        &:nth-child(2) {
+            top: 40%;
+        }
+
+        &:nth-child(3) {
+            top: 80%;
+        }
+    }
+
+    @media screen and (min-width: $breakpoint) {
+        &-menu {
+            display: none;
+        }
+    }
+}

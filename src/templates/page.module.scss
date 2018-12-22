@@ -1,0 +1,15 @@
+@import "../styles/variables.scss";
+
+.category {
+    &-list {
+        list-style-type: circle;
+    }
+
+    &-item {
+        
+    }
+
+    &-date {
+        font-style: italic;
+    }
+}
