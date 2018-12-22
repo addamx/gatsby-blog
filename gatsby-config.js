@@ -4,7 +4,7 @@ if (process.env.NODE_ENV === 'development') {
 
 module.exports = {
   siteMetadata: {
-    title: 'Addamx\'s Notes',
+    title: '(Demo) Addamx\'s Notes',
     author: 'Addams',
     description: 'Leave some thought and learning notes',
     siteUrl: 'https://addamx.surge.sh/',
@@ -30,6 +30,7 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: 'blog',
+        ignore: [`**/\.unison\.*`,`**/.*\.js`]
       },
     },
     {
@@ -84,7 +85,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        // icon: `content/assets/gatsby-icon.png`,
       },
     },
     `gatsby-plugin-offline`,

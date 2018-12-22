@@ -6,7 +6,7 @@ import Image from 'gatsby-image'
 function Bio() {
   return (
     <StaticQuery
-      query={bioQuery}
+      // query={bioQuery}
       render={data => {
         const { author, social } = data.site.siteMetadata
         return (
