@@ -1,15 +1,40 @@
 @import "../styles/variables.scss";
 
-.category {
+.page {
     &-list {
-        list-style-type: circle;
+        list-style-type: none;
+        padding-left: 0;
     }
 
-    &-item {
-        
+    &-link {
+        display: block;
+        // justify-content: space-between;
+        max-width: 600px;
+        line-height: 2;
+        font-size: 16px;
+
+        &:before {
+            content: '-';
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 15px;
+            font-weight: bold;
+        }
+
+        &:after {
+            content: '\200b';
+            display: block;
+            clear: both;
+            height: 0;
+        }
+
+        &:hover {
+            background: $color-gray01;
+        }
     }
 
     &-date {
         font-style: italic;
+        float: right;
     }
 }

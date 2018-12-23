@@ -12,11 +12,11 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} categorys={categorys} siteMetadata={siteMetadata}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <h1>{post.frontmatter.title}</h1>
+        <h1 style={{ color:'#009688'}}>{post.frontmatter.title}</h1>
         <p>
           {post.frontmatter.date}
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="markdown-body" dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr/>
 
         <ul

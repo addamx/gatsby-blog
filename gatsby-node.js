@@ -4,11 +4,11 @@ const { createFilePath } = require('gatsby-source-filesystem')
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions
 
-  createRedirect({ fromPath: '/', redirectInBrowser: true, toPath: '/home' });
-  console.log(`Redirecting: "/" To "/home"`);
+  // createRedirect({ fromPath: '/', redirectInBrowser: true, toPath: '/home' });
 
   return new Promise((resolve, reject) => {
     const home = path.resolve('./src/templates/home.js');
+    const search = path.resolve('./src/templates/search.js');
     const blogPost = path.resolve('./src/templates/blog-post.js');
     const blogCategory = path.resolve('./src/templates/blog-category.js');
     resolve(
@@ -93,10 +93,20 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Home
         createPage({
-          path: '/home',
+          path: '/',
           component: home,
           context: {
-            slug: '/home',
+            slug: '/',
+            ...requiredProps
+          }
+        });
+
+        // Search
+        createPage({
+          path: '/search',
+          component: search,
+          context: {
+            slug: '/search',
             ...requiredProps
           }
         });
@@ -135,6 +145,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     });
+    if (node.frontmatter.title === '') {
+      node.frontmatter.title = node.fileAbsolutePath.replace(/.+\/(.*?)\.md$/, '$1');
+    }
     createNodeField({
       name: `category`,
       node,

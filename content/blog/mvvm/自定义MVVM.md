@@ -1,10 +1,8 @@
 ---
-title: Hello World
-date: '2015-05-01T22:12:03.284Z'
+date: '20180115'
 ---
 
-# ref
-- [实现一个属于我们自己的简易MVVM库](https://zhuanlan.zhihu.com/p/27028242)
+> - [实现一个属于我们自己的简易MVVM库](https://zhuanlan.zhihu.com/p/27028242)
 
 
 # 方案
@@ -14,3 +12,32 @@ date: '2015-05-01T22:12:03.284Z'
 3、发布-订阅模式(backbone)：通过发布消息，订阅消息进行数据和视图的绑定监听。
 
 ![my-mvvm](../../assets/mvvm.jpg)
+
+```js
+function observe (data) {
+  if (!data || typeof data !== 'object') {
+    return;
+  }
+  Object.keys(data).forEach(key => {
+    observeProperty(data, key, data[key])
+  })
+}
+
+function observeProperty (obj, key, val) {
+  observe(val);
+  Object.defineProperty(obj, key, {
+    enumerable: true,   // 可枚举
+    configurable: true, // 可重新定义
+    get: function () {
+      return val;
+    },
+    set: function (newVal) {
+      if (val === newVal || (newVal !== newVal && val !== val)) {
+        return;
+      }
+      console.log('数据更新啦 ', val, '=>', newVal);
+      val = newVal;
+    }
+  });
+}
+```

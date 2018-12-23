@@ -6,16 +6,16 @@ module.exports = {
   siteMetadata: {
     title: '(Demo) Addamx\'s Notes',
     author: 'Addams',
-    description: 'Leave some thought and learning notes',
+    description: 'Leave learning notes and record some thoughts',
     siteUrl: 'https://addamx.surge.sh/',
     social: {
     },
-    redirect: [
-      {
-        fromPath: '/',
-        toPath: '/home'
-      }
-    ],
+    // redirect: [
+    //   {
+    //     fromPath: '/',
+    //     toPath: '/home'
+    //   }
+    // ],
     blogConfig: {
       order: [
           "category2",
@@ -85,7 +85,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        // icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/web-icon.png`,
       },
     },
     `gatsby-plugin-offline`,

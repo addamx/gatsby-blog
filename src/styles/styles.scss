@@ -1,7 +1,13 @@
+/* Vendor */
 @import "normalize.css";
-@import "prismjs.css";
-// @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import '../../node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css';
+@import '../../node_modules/prismjs/themes/prism-tomorrow.css';
+
+/* Variables */
 @import "variables.scss";
+
+/* Compoonents */
+@import "components/markdown";
 
 * {
     box-sizing: border-box;
@@ -14,15 +20,15 @@ body,
 }
 
 body {
-    font-family: '\5FAE\8F6F\96C5\9ED1', 'Microsoft YaHei', 'PingFang HK', '\534E\6587\9ED1\4F53', STHeiti, 'Helvetica Neue', Helvetica, Arial, sans-serif, '\5B8B\4F53', Simsun;
+    font-family: Helvetica, Arial, '\5FAE\8F6F\96C5\9ED1', 'Microsoft YaHei', 'PingFang HK', '\534E\6587\9ED1\4F53', STHeiti, 'Helvetica Neue', sans-serif, '\5B8B\4F53', Simsun;
     background: $color-gray01;
+    font-size: 14px;
 }
 
 a,
 a:visited {
     color: $color-gray02;
     text-decoration: none;
-    transition: color .2s;
 
     &:hover,
     &:active {
@@ -31,4 +37,13 @@ a:visited {
 }
 
 p {
+    line-height: 1.6;
+}
+
+li {
+    line-height: 1.6;
+}
+
+.highlight-word {
+    background: #ff0 !important;
 }

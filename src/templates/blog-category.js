@@ -13,10 +13,15 @@ class BlogCategoryTemplate extends React.Component {
 
         return (
             <Layout location={this.props.location} categorys={categorys} siteMetadata={siteMetadata}>
-                <ul className={style.categoryList}>
+                <SEO title="Blog Category" keywords={['blog', 'gatsby', 'javascript', 'react']} />
+                <ul className={style.pageList}>
                 {
                     posts.map(({node}) => (
-                        <li className={style.categoryItem} key={node.fields.slug}><Link to={node.fields.slug}>{node.frontmatter.title} ---------- <small className={style.categoryDate}>{node.frontmatter.date}</small></Link></li>
+                        <li key={node.fields.slug}>
+                            <Link className={style.pageLink} to={node.fields.slug}>{node.frontmatter.title}
+                                <small className={style.pageDate}> ---------- {node.frontmatter.date}</small>
+                            </Link>
+                        </li>
                     ))
                 }
                 </ul>

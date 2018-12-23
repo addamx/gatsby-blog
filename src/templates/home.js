@@ -42,7 +42,7 @@ export default Home
 
 
 export const PageQuery = graphql`
-query PageQuery {
+query HomeQuery {
   allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }, limit: 10
   ) {

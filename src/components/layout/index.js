@@ -4,6 +4,7 @@ import Header from '../header'
 import Sidebar from '../sidebar'
 import BurgeMenu from '../burgeMenu'
 
+
 import '../../styles/styles.scss'
 import style from './layout.module.scss'
 class Layout extends React.Component {
@@ -23,6 +24,7 @@ class Layout extends React.Component {
   }
 
   render() {
+
     const { location, children, siteMetadata, categorys } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
@@ -41,7 +43,7 @@ class Layout extends React.Component {
           <main className={style.main}>{children}</main>
           <BurgeMenu toggleSidebar={this.toggleSidebar} />
           <aside className={style.aside} style={sidebarOpenedStyle}>
-            <Sidebar categorys={categorys} siteMetadata={siteMetadata}/>
+            <Sidebar location={location} categorys={categorys} siteMetadata={siteMetadata}/>
           </aside>
         </div>
       </React.Fragment>
