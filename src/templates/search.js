@@ -43,6 +43,8 @@ class Search extends React.Component {
         let posts = this.props.data.allMarkdownRemark.edges
 
         if (keyword.length > 1) {
+          // TODO: lowerCase search
+          // const word = keyword.toLocaleLowerCase();
             posts = posts.filter(({node}) => {
               if (node.frontmatter.title.indexOf(keyword) !== -1) {
                 // node.frontmatter.title = node.frontmatter.title.replace(keyword, `<span class="highlight-word">${keyword}</span>`)

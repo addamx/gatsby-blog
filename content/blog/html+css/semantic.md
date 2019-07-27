@@ -49,7 +49,7 @@ HTML 语义化就是**根据具体内容，选择合适的 HTML 标签进行代�
 
 - `<dfn>`术语: <dfn title="互联网">互联网</dfn>
 
-# 页面结构
+#### 页面结构
 
 ![page-structors](../../assets/page-structure.gif)
 
@@ -97,8 +97,8 @@ HTML 语义化就是**根据具体内容，选择合适的 HTML 标签进行代�
 </footer>
 ```
 
-# 表单
-
+#### 表单
+```html
 <form action="/action.php" method="post">
   <!-- fieldset: 分类 -->
   <fieldset>
@@ -144,11 +144,11 @@ HTML 语义化就是**根据具体内容，选择合适的 HTML 标签进行代�
   <input type="submit" value="Submit" />
 </form>
 
-* output 标签用于 form 的输出内容, 相应的 form 需要有`oninput`属性或者绑定 input 事件
+<!-- output 标签用于 form 的输出内容, 相应的 form 需要有`oninput`属性或者绑定 input 事件 -->
 
 <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
   <input type="range" id="a" value="50">100
   +<input type="number" id="b" value="50">
   =<output name="x" for="a b"></output>
 </form>
-
+```
